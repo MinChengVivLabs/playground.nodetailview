@@ -1,0 +1,27 @@
+result-view {
+  match: TextTitle(this)
+  message ("In result view of text title")
+  render {
+    if (size(this) > 1) {
+      list-of (this) {
+        where-each (item) {
+          cell-card {
+            slot2 {
+              content {
+                primary ("Primary: #{value(item)}")
+                secondary("Click me") 
+              }
+            }
+            on-click {
+              intent {
+                goal: PlayTitle
+                value: $expr(item)
+              }
+            }
+          }
+        }
+        // has-details (false)
+      }
+    }
+  }
+}

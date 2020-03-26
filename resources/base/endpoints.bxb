@@ -1,0 +1,12 @@
+endpoints {
+  action-endpoints {
+    action-endpoint (CreateTitle) {
+      accepted-inputs ()
+      local-endpoint (CreateTitle.js)
+    }
+    action-endpoint (PlayTitle) {
+      accepted-inputs (title) 
+      local-endpoint (PlayTitle.js)
+    }
+  }
+}

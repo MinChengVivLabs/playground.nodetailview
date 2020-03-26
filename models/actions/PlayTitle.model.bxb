@@ -1,0 +1,16 @@
+action (PlayTitle) {
+  description (__DESCRIPTION__)
+  type (Search)
+  collect {
+    input (title) {
+      type (TextTitle)
+      min (Required) max (One)
+      default-init {
+        intent {
+          goal: CreateTitle
+        }
+      }
+    }
+  }
+  output (TextResult)
+}

@@ -1,0 +1,20 @@
+input-view {
+  match: TextTitle(this) 
+  message: template ("This is the input view of Text title") 
+  render {
+    if (size(this)>=1) {
+      selection-of (this) {
+        where-each (item) {
+          cell-card {
+            slot2 {
+              content {
+                primary ("Primary: #{value(item)}")
+                secondary("Click me") 
+              }
+            }          
+          }
+        }
+      }
+    }
+  }
+}
